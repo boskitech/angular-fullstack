@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose  from 'mongoose';
-import contactsRoutes from './routes/contacts.js'
+import appRoutes from './routes/appRoutes.js'
 import cors from 'cors'
 
 const app = express();
@@ -12,7 +12,7 @@ const URL2 = 'mongodb+srv://nodetut:nodeaccess@cluster0.yasfu.mongodb.net/contac
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(URL, {useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(URL2, {useNewUrlParser:true, useUnifiedTopology:true})
     .then(() => console.log('Connected'))
     .catch((err) => console.log(err));
 
@@ -28,5 +28,5 @@ con.on('error', () => {
 
 app.listen(PORT, () => console.log(`Server running on port:${PORT}`))
 
-app.use('/api', contactsRoutes);
+app.use('/api', appRoutes);
 

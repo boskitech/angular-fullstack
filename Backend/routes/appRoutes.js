@@ -1,5 +1,7 @@
 import express from 'express'
 import {addContact, getContact, getOneContact, deleteContact, updateContact} from '../controllers/contacts.js'
+import {login} from '../controllers/login.js'
+import {register} from '../controllers/register.js'
 
 const router = express.Router();
 
@@ -17,5 +19,12 @@ router.delete('/contact/:id', deleteContact);
 
 //Update Contact
 router.put('/contact/:id', updateContact)
+
+//Login route
+router.post('/login', login)
+
+//Register route
+router.post('/register', register)
+
 
 export default router
