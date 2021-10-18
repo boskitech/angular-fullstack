@@ -1,0 +1,9 @@
+PUT  http://localhost:3000/api/contact/616802f14d21256ee87b0631
+Content-Type: application/json
+
+{
+    "firstName": "Kabiru",
+    "lastName": "Muhammad",
+    "phoneNumber": "09000299898",
+    "email": "KabirMohammad@gmail.com"
+}
