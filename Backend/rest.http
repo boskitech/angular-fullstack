@@ -1,9 +1,28 @@
-PUT  http://localhost:3000/api/contact/616802f14d21256ee87b0631
+POST  http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "firstName": "Kabiru",
-    "lastName": "Muhammad",
-    "phoneNumber": "09000299898",
-    "email": "KabirMohammad@gmail.com"
+    "email": "Kamal@gmail.com",
+    "password": "kamal"
+}
+
+###
+POST  http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "email": "Kamal@gmail.com",
+    "username": "kamaludeen",
+    "password": "kamal"
+}
+
+###
+POST http://localhost:3000/api/contact
+Content-Type: application/json
+
+{
+    "firstName": "Muhammad",
+    "lastName": "Sagir",
+    "phoneNumber": "0907y78676",
+    "email": "msagir@gmail.com"
 }

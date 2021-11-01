@@ -2,6 +2,7 @@ import express from 'express'
 import {addContact, getContact, getOneContact, deleteContact, updateContact} from '../controllers/contacts.js'
 import {login} from '../controllers/login.js'
 import {register} from '../controllers/register.js'
+import { verifyToken } from '../middleware/middleware.js'
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ const router = express.Router();
 router.post('/contact', addContact);
 
 //Get all contacts
-router.get('/contacts', getContact);
+router.get('/contacts', verifyToken, getContact);
 
 //Get single contact
 router.get('/contact/:id', getOneContact);
@@ -25,6 +26,5 @@ router.post('/login', login)
 
 //Register route
 router.post('/register', register)
-
 
 export default router

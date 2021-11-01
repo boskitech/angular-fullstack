@@ -1,4 +1,5 @@
 import Contact from '../models/contacts.js'
+import jwt  from 'jsonwebtoken';
 
 //Add contact --------------------------------------------
 export const addContact = (req, res) => {
@@ -20,9 +21,16 @@ export const addContact = (req, res) => {
 
 //Get Contacts ----------------------------------------------
 export const getContact = (req, res) => {
-    Contact.find((err, contacts) => {
-        res.json(contacts);
-    });
+    jwt.verify(req.token, 'secretkey', (err, authData) => {
+        if(err){
+            res.sendStatus(403)
+        }else{
+            Contact.find((err, contacts) => {
+                res.json(contacts);
+            })
+            
+        }
+    })
 }
 
 //Get One contact ---------------------------------------------

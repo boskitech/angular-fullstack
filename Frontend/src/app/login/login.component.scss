@@ -1,0 +1,15 @@
+.loginPan{
+    height: 100%;
+    mat-card{
+        padding: 0px;
+    }
+}
+
+.loginPan form, .submit{
+    padding: 15px;
+}
+
+.submit a{
+    color: blue;
+    text-decoration: none;
+}
