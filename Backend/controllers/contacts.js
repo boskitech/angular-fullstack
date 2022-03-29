@@ -56,6 +56,7 @@ export const deleteContact = (req, res) => {
     });
 }
 
+
 //Update Contact -------------------------------------------
 export const updateContact = (req, res) => {
     const id = {_id: req.params.id};
